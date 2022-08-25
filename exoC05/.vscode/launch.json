@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": ["-Wall", "-Werror", "-Wextra"],
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "cwd": "/Users/gd-harco/Documents/exoC05",
+      "program": "/Users/gd-harco/Documents/exoC05/build/Debug/outDebug",
+      "MIMode": "gdb"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+///////////////////////////////////////////////////////////////////////////////////
+
+#include "get_strs.h"
+#include "print_final_number.h"
+#include "print_number_parts.h"
+#include "print_number_parts2.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include <errno.h>
+
+unsigned int	str_len(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strdup(char *src)
+{
+	char	*copy;
+	int		i;
+
+	copy = malloc(sizeof(char) * (str_len(src) + 1));
+	if (copy == NULL)
+	{
+		errno = ENOMEM;
+		return (NULL);
+	}
+	i = 0;
+	while (src[i])
+	{
+		copy[i] = src[i];
+		i++;
+	}
+	copy[i] = 0;
+	return (copy);
+}
+
+int	main(void)
+{
+	t_dictionary *data;
+
+	data = malloc(sizeof(t_dictionary) * 42);
+	if (data == NULL)
+		return (1);
+	data[0].key = ft_strdup("0");
+	data[0].content = ft_strdup("zero");
+	data[1].key = ft_strdup("1");
+	data[1].content = ft_strdup("one");
+	data[2].key = ft_strdup("2");
+	data[2].content = ft_strdup("two");
+	data[3].key = ft_strdup("3");
+	data[3].content = ft_strdup("three");
+	data[4].key = ft_strdup("4");
+	data[4].content = ft_strdup("four");
+	data[5].key = ft_strdup("5");
+	data[5].content = ft_strdup("five");
+	data[6].key = ft_strdup("6");
+	data[6].content = ft_strdup("six");
+	data[7].key = ft_strdup("7");
+	data[7].content = ft_strdup("seven");
+	data[8].key = ft_strdup("8");
+	data[8].content = ft_strdup("eight");
+	data[9].key = ft_strdup("9");
+	data[9].content = ft_strdup("nine");
+	data[10].key = ft_strdup("10");
+	data[10].content = ft_strdup("ten");
+	data[11].key = ft_strdup("11");
+	data[11].content = ft_strdup("eleven");
+	data[12].key = ft_strdup("12");
+	data[12].content = ft_strdup("twelve");
+	data[13].key = ft_strdup("13");
+	data[13].content = ft_strdup("thirteen");
+	data[14].key = ft_strdup("14");
+	data[14].content = ft_strdup("fourteen");
+	data[15].key = ft_strdup("15");
+	data[15].content = ft_strdup("fifteen");
+	data[16].key = ft_strdup("16");
+	data[16].content = ft_strdup("sixteen");
+	data[17].key = ft_strdup("17");
+	data[17].content = ft_strdup("seventeen");
+	data[18].key = ft_strdup("18");
+	data[18].content = ft_strdup("eighteen");
+	data[19].key = ft_strdup("19");
+	data[19].content = ft_strdup("nineteen");
+	data[20].key = ft_strdup("20");
+	data[20].content = ft_strdup("twenty");
+	data[21].key = ft_strdup("30");
+	data[21].content = ft_strdup("thirty");
+	data[22].key = ft_strdup("40");
+	data[22].content = ft_strdup("forty");
+	data[23].key = ft_strdup("50");
+	data[23].content = ft_strdup("fifty");
+	data[24].key = ft_strdup("60");
+	data[24].content = ft_strdup("sixty");
+	data[25].key = ft_strdup("70");
+	data[25].content = ft_strdup("seventy");
+	data[26].key = ft_strdup("80");
+	data[26].content = ft_strdup("eighty");
+	data[27].key = ft_strdup("90");
+	data[27].content = ft_strdup("ninety");
+	data[28].key = ft_strdup("100");
+	data[28].content = ft_strdup("hundred");
+	data[29].key = ft_strdup("1000");
+	data[29].content = ft_strdup("thousand");
+	data[30].key = ft_strdup("1000000");
+	data[30].content = ft_strdup("million");
+	data[31].key = ft_strdup("1000000000");
+	data[31].content = ft_strdup("billion");
+	data[32].key = ft_strdup("1000000000000");
+	data[32].content = ft_strdup("trillion");
+	data[33].key = ft_strdup("1000000000000000");
+	data[33].content = ft_strdup("quadrillion");
+	data[34].key = ft_strdup("1000000000000000000");
+	data[34].content = ft_strdup("quintillion");
+	data[35].key = ft_strdup("1000000000000000000000");
+	data[35].content = ft_strdup("sextillion");
+	data[36].key = ft_strdup("1000000000000000000000000");
+	data[36].content = ft_strdup("septillion");
+	data[37].key = ft_strdup("1000000000000000000000000000");
+	data[37].content = ft_strdup("octillion");
+	data[38].key = ft_strdup("1000000000000000000000000000000");
+	data[38].content = ft_strdup("nonillion");
+	data[39].key = ft_strdup("1000000000000000000000000000000000");
+	data[39].content = ft_strdup("decillion");
+	data[40].key = ft_strdup("1000000000000000000000000000000000000");
+	data[40].content = ft_strdup("undecillion");
+	data[41].key = NULL;
+	data[41].content = NULL;
+
+	print_final_number(data, "0000000014212");
+}
